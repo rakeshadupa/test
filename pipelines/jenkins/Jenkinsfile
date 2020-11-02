@@ -12,7 +12,7 @@
 
 node ("master"){
 
-    def GIT_LOCATION = "https://github.com/rakeshadupa/webmethods-api-gateway-devops.git"
+    def GIT_LOCATION = "https://github.com/rakeshadupa/test.git"
 
 	def workspace = pwd()
 	def script_location = "${workspace}/apigateway"
