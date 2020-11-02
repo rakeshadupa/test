@@ -22,7 +22,7 @@ node ("master"){
 	
 
 	stage('Checkout') {
-		 checkout([$class: 'GitSCM', branches: [[name: '*/develop']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'apigateway']], submoduleCfg: [], userRemoteConfigs: [[url: "${GIT_LOCATION}"]]])
+		 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'apigateway']], submoduleCfg: [], userRemoteConfigs: [[url: "${GIT_LOCATION}"]]])
 	}
 
     load "${script_location}/pipelines/jenkins/jenkins.properties"
