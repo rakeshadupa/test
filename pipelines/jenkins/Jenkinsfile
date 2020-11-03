@@ -37,19 +37,3 @@ node ("master"){
 			 }
 		  }
 	}
-
-	
-	stage('Rollout') {
-	    if(test_results == "false"){
-		  echo "Tests have failed. Not promoting."
-		}
-		else{
-			withEnv(["api_project=${api_project}","apigateway_qa_url=${apigateway_qa_url}","bin_loc=${COMMON_LIB_LOCATION}","script_location=${script_location}"]) {
-					dir("$bin_loc"){		
-						  sh " source $bin_loc/common.lib; promote_api $api_project \"${script_location}/tests/environment/qa_environment.json\" \"httpInvokeUrl=$apigateway_qa_url;buildNumber=\"${currentBuild.number}\"\""
-						 }
-					  }
-	    }
-	}
-   
-}
