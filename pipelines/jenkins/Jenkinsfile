@@ -37,31 +37,7 @@ node ("master"){
 			 }
 		  }
 	}
-	
- /*  stage('Test') {
-	   try {
-		if("${test_suite}" == "all") {
-		  test_folder = "all"
-		} else {
-		 test_folder = "${script_location}/${test_suite}"
-		}
-		withEnv(["test_suite=${test_folder}","apigateway_qa_url=${apigateway_qa_url}","bin_loc=${COMMON_LIB_LOCATION}","script_location=${script_location}"]) {
-			dir("$bin_loc"){		
-				  sh '''
-					 source $bin_loc/common.lib; run_test_suite $test_suite "$script_location/tests/environment/qa_environment.json"  $apigateway_qa_url "$script_location/Results"
-				   '''
-				 }
-			  }
 
-		} catch(err) {
-		    test_results = "false"
-			echo "Exception: ${err}"
-		} finally {
-			junit 'apigateway/Results/*.xml'
-		}
-	}
-	
-	*/
 	
 	stage('Rollout') {
 	    if(test_results == "false"){
