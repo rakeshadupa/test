@@ -38,7 +38,7 @@ node ("master"){
 		  }
 	}
 	
-   stage('Test') {
+ /*  stage('Test') {
 	   try {
 		if("${test_suite}" == "all") {
 		  test_folder = "all"
@@ -61,7 +61,7 @@ node ("master"){
 		}
 	}
 	
-	
+	*/
 	
 	stage('Rollout') {
 	    if(test_results == "false"){
