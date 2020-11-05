@@ -1,0 +1,33 @@
+{
+  "configId" : "HTTPListener@9999",
+  "internalPorts" : { },
+  "properties" : {
+    "configURL" : "/WmRoot/configHTTP.dsp",
+    "maxQueue" : "65534",
+    "listenerType" : "Diagnostic",
+    "threadPriority" : "10",
+    "pkg" : "WmRoot",
+    "ssl" : "false",
+    "targets" : "0",
+    "enabled" : "true",
+    "minThread" : "1",
+    "protocol" : "HTTP",
+    "provider" : "webMethods",
+    "threadPool" : "true",
+    "portAlias" : "DefaultDiagnostic",
+    "usedThreadCount" : "0",
+    "key" : "HTTPListener@9999",
+    "uniqueID" : "f6b08a5e958f4b7da3972f253657c5af",
+    "curDelay" : "0",
+    "keepAliveTimeout" : "20000",
+    "listenerKey" : "HTTPListener@9999",
+    "portDescription" : "Default Diagnostic Port",
+    "internalPort" : "-1",
+    "maxThread" : "5",
+    "suspended" : "false",
+    "port" : 9999,
+    "factoryKey" : "webMethods/HTTP",
+    "clientAuth" : "none",
+    "stepsize" : "10000"
+  }
+}

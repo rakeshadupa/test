@@ -1,0 +1,105 @@
+{
+  "apiDefinition" : {
+    "info" : {
+      "version" : "1.0",
+      "title" : "log"
+    },
+    "host" : "DESKTOP-LS0I62P:5555",
+    "basePath" : "/rad/Deployment.rad:log",
+    "schemes" : [ "http" ],
+    "consumes" : [ "application/json" ],
+    "produces" : [ "application/json" ],
+    "security" : [ ],
+    "paths" : {
+      "/doLog" : {
+        "get" : {
+          "description" : "",
+          "operationId" : "doLog_GET_1",
+          "parameters" : [ ],
+          "responses" : {
+            "200" : {
+              "description" : "OK",
+              "content" : {
+                "application/json" : {
+                  "schema" : {
+                    "$ref" : "#/components/schemas/doLog_GET_response"
+                  }
+                }
+              }
+            },
+            "401" : {
+              "description" : "Access Denied"
+            }
+          },
+          "enabled" : true,
+          "requestBody" : {
+            "content" : {
+              "application/x-www-form-urlencoded" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "firstName" : {
+                      "type" : "string",
+                      "description" : "",
+                      "readOnly" : false
+                    },
+                    "lastName" : {
+                      "type" : "string",
+                      "description" : "",
+                      "readOnly" : false
+                    }
+                  }
+                }
+              }
+            },
+            "required" : true
+          }
+        },
+        "parameters" : [ ],
+        "enabled" : true
+      }
+    },
+    "securityDefinitions" : { },
+    "definitions" : { },
+    "baseUriParameters" : [ ],
+    "externalDocs" : [ ],
+    "servers" : [ {
+      "url" : "http://DESKTOP-LS0I62P:5555/rad/Deployment.rad:log"
+    } ],
+    "components" : {
+      "schemas" : {
+        "doLog_GET_response" : {
+          "required" : [ "fullName" ],
+          "type" : "object",
+          "properties" : {
+            "fullName" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "type" : "rest"
+  },
+  "nativeEndpoint" : [ {
+    "passSecurityHeaders" : true,
+    "uri" : "http://DESKTOP-LS0I62P:5555/rad/Deployment.rad:log",
+    "connectionTimeoutDuration" : 0,
+    "alias" : false
+  } ],
+  "apiName" : "log",
+  "apiVersion" : "1.0",
+  "maturityState" : "Beta",
+  "isActive" : false,
+  "type" : "REST",
+  "owner" : "Administrator",
+  "policies" : [ "1a796700-1346-4c12-b04b-1098ac8604dd" ],
+  "referencedFiles" : {
+    "log.swagger" : "---\r\nswagger: \"2.0\"\r\ninfo:\r\n  version: \"1.0\"\r\n  title: \"log\"\r\nhost: \"DESKTOP-LS0I62P:5555\"\r\nbasePath: \"/rad/Deployment.rad:log\"\r\nschemes:\r\n- \"http\"\r\nconsumes:\r\n- \"application/json\"\r\nproduces:\r\n- \"application/json\"\r\npaths:\r\n  /doLog:\r\n    get:\r\n      description: \"\"\r\n      operationId: \"doLog_GET_1\"\r\n      parameters:\r\n      - name: \"firstName\"\r\n        in: \"formData\"\r\n        description: \"\"\r\n        required: true\r\n        type: \"string\"\r\n      - name: \"lastName\"\r\n        in: \"formData\"\r\n        description: \"\"\r\n        required: true\r\n        type: \"string\"\r\n      responses:\r\n        200:\r\n          description: \"OK\"\r\n          schema:\r\n            $ref: \"#/definitions/doLog_GET_response\"\r\n        401:\r\n          description: \"Access Denied\"\r\ndefinitions:\r\n  doLog_GET_response:\r\n    required:\r\n    - \"fullName\"\r\n    properties:\r\n      fullName:\r\n        type: \"string\"\r\n"
+  },
+  "scopes" : [ ],
+  "publishedPortals" : [ ],
+  "creationDate" : "2020-11-05 04:34:54 GMT",
+  "systemVersion" : 1,
+  "id" : "0cc5cbd3-cbe8-4f93-9daa-8ba9f7c742bd"
+}

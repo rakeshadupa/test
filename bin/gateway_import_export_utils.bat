@@ -8,7 +8,7 @@ def
 
 :loop
 IF NOT "%1"=="" (
-SET PROJECT_NAME=petstore
+SET PROJECT_NAME=log
 SET GATEWAY_URL=http://localhost:5555
 
 echo first if===
