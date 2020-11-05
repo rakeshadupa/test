@@ -1,0 +1,24 @@
+{
+  "id" : "8137bfae-61c6-4ffa-97fd-4abb56227604",
+  "names" : [ {
+    "value" : "Identify & Authorize Application",
+    "locale" : "en"
+  } ],
+  "descriptions" : [ {
+    "value" : "Default evaluate policy action for the package Evaluate policy action for the package bulk",
+    "locale" : "English"
+  } ],
+  "templateKey" : "evaluatePolicy",
+  "parameters" : [ {
+    "templateKey" : "IdentificationRule",
+    "values" : [ "identificationType" ],
+    "parameters" : [ {
+      "templateKey" : "identificationType",
+      "values" : [ "apiKey" ]
+    } ]
+  }, {
+    "templateKey" : "logicalConnector",
+    "values" : [ "OR" ]
+  } ],
+  "active" : false
+}

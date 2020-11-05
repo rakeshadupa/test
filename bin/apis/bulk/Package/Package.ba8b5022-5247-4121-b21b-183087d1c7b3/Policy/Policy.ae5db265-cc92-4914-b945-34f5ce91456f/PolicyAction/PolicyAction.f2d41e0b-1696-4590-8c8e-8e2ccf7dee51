@@ -1,0 +1,49 @@
+{
+  "id" : "f2d41e0b-1696-4590-8c8e-8e2ccf7dee51",
+  "names" : [ {
+    "value" : "Throttling Traffic Optimization",
+    "locale" : "en"
+  } ],
+  "descriptions" : [ {
+    "value" : "Throttling Traffic policy action for the package Throttling policy action for the package bulk",
+    "locale" : "English"
+  } ],
+  "templateKey" : "throttle",
+  "parameters" : [ {
+    "templateKey" : "throttleRule",
+    "values" : [ ],
+    "parameters" : [ {
+      "templateKey" : "throttleRuleName",
+      "values" : [ "requestCount" ]
+    }, {
+      "templateKey" : "monitorRuleOperator",
+      "values" : [ "EQ" ]
+    }, {
+      "templateKey" : "value",
+      "values" : [ "-1" ]
+    } ]
+  }, {
+    "templateKey" : "destination",
+    "values" : [ ],
+    "parameters" : [ {
+      "templateKey" : "destinationType",
+      "values" : [ "GATEWAY" ]
+    } ]
+  }, {
+    "templateKey" : "alertInterval",
+    "values" : [ "52" ]
+  }, {
+    "templateKey" : "alertIntervalUnit",
+    "values" : [ "weeks" ]
+  }, {
+    "templateKey" : "alertFrequency",
+    "values" : [ "once" ]
+  }, {
+    "templateKey" : "alertMessage",
+    "values" : [ "ERR" ]
+  }, {
+    "templateKey" : "consumerIds",
+    "values" : [ "dummy" ]
+  } ],
+  "active" : false
+}

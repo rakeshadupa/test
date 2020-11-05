@@ -1,0 +1,26 @@
+{
+  "id" : "ae5db265-cc92-4914-b945-34f5ce91456f",
+  "names" : [ {
+    "value" : "bulk",
+    "locale" : "English"
+  } ],
+  "descriptions" : [ {
+    "value" : "Default policy for the package ",
+    "locale" : "English"
+  } ],
+  "policyEnforcements" : [ {
+    "enforcements" : [ {
+      "enforcementObjectId" : "8137bfae-61c6-4ffa-97fd-4abb56227604"
+    } ],
+    "stageKey" : "IAM"
+  }, {
+    "enforcements" : [ {
+      "enforcementObjectId" : "f2d41e0b-1696-4590-8c8e-8e2ccf7dee51"
+    } ],
+    "stageKey" : "LMT"
+  } ],
+  "policyScope" : "PACKAGE",
+  "active" : false,
+  "global" : false,
+  "systemPolicy" : false
+}

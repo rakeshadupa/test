@@ -1,0 +1,11 @@
+{
+  "id" : "ba8b5022-5247-4121-b21b-183087d1c7b3",
+  "name" : "bulk",
+  "version" : "1.0",
+  "deprecated" : false,
+  "apiIds" : [ "0cc5cbd3-cbe8-4f93-9daa-8ba9f7c742bd", "4ea2dcf0-66c5-469b-b822-fe4707c6f899" ],
+  "planIds" : [ ],
+  "publishedPortals" : [ ],
+  "policyIds" : [ "ae5db265-cc92-4914-b945-34f5ce91456f" ],
+  "active" : false
+}

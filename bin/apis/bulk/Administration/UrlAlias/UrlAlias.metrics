@@ -1,0 +1,8 @@
+{
+  "id" : "metrics",
+  "alias" : "metrics",
+  "urlPath" : "invoke/wm.server.query:getPrometheusStats",
+  "portList" : [ ],
+  "association" : "1",
+  "package" : "WmRoot"
+}
