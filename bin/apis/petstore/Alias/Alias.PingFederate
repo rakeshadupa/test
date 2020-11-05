@@ -1,0 +1,26 @@
+{
+  "id" : "PingFederate",
+  "name" : "PingFederate",
+  "type" : "clientMetadataMapping",
+  "owner" : "Administrator",
+  "providerName" : "PingFederate",
+  "implNames" : {
+    "grant_types" : "grantTypes",
+    "logo_uri" : "logoUrl",
+    "scope" : "restrictedScopes",
+    "client_secret" : "secret",
+    "redirect_uris" : "redirectUris",
+    "client_name" : "name",
+    "client_id" : "clientId"
+  },
+  "extendedValues" : { },
+  "extendedValuesV2" : [ {
+    "endpointType" : "CLIENT_REGISTRATION",
+    "key" : "restrictScopes",
+    "value" : "true"
+  }, {
+    "endpointType" : "CLIENT_UPDATE",
+    "key" : "restrictScopes",
+    "value" : "true"
+  } ]
+}

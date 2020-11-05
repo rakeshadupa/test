@@ -1,0 +1,29 @@
+{
+  "configId" : "HTTPListener@5566",
+  "internalPorts" : { },
+  "properties" : {
+    "configURL" : "/WmRoot/configHTTP.dsp",
+    "maxQueue" : "65534",
+    "listenerType" : "Regular",
+    "pkg" : "WmRoot",
+    "ssl" : "false",
+    "targets" : "0",
+    "enabled" : "true",
+    "protocol" : "HTTP",
+    "provider" : "webMethods",
+    "portAlias" : "DefaultPrimary",
+    "key" : "HTTPListener@5566",
+    "uniqueID" : "bf86be2bfd5d4db08bf6f2097cfeb236",
+    "curDelay" : "0",
+    "keepAliveTimeout" : "20000",
+    "listenerKey" : "HTTPListener@5566",
+    "portDescription" : "Default Primary Port",
+    "internalPort" : "-1",
+    "suspended" : "false",
+    "port" : 5566,
+    "factoryKey" : "webMethods/HTTP",
+    "clientAuth" : "none",
+    "stepsize" : "10000",
+    "primary" : "true"
+  }
+}

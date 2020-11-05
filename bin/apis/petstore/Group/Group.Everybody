@@ -1,0 +1,9 @@
+{
+  "id" : "Everybody",
+  "name" : "Everybody",
+  "owner" : "Default",
+  "description" : "All users in APIGateway will be part of this group.",
+  "type" : "local",
+  "systemDefined" : true,
+  "userIds" : [ "Administrator" ]
+}

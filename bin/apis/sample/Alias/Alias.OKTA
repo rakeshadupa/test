@@ -1,0 +1,10 @@
+{
+  "id" : "OKTA",
+  "name" : "OKTA",
+  "type" : "clientMetadataMapping",
+  "owner" : "Administrator",
+  "providerName" : "OKTA",
+  "implNames" : { },
+  "extendedValues" : { },
+  "extendedValuesV2" : [ ]
+}

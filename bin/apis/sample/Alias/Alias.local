@@ -1,0 +1,16 @@
+{
+  "id" : "local",
+  "name" : "local",
+  "description" : "API Gateway as an Authorization server.",
+  "type" : "authServerAlias",
+  "owner" : "Administrator",
+  "tokenGeneratorConfig" : {
+    "expiry" : 0,
+    "accessTokenExpInterval" : 3600,
+    "authCodeExpInterval" : 600
+  },
+  "scopes" : [ ],
+  "supportedGrantTypes" : [ "authorization_code", "password", "client_credentials", "refresh_token", "implicit" ],
+  "oauthTokens" : [ ],
+  "authServerType" : "LOCAL_IS"
+}
