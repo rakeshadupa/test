@@ -1,0 +1,13 @@
+{
+  "configId" : "settings",
+  "userName" : "Administrator",
+  "internalPorts" : { },
+  "properties" : {
+    "preferredSettings" : {
+      "extendedKeys" : {
+        "allowExceedMaxWindowSize" : ""
+      },
+      "wattKeys" : { }
+    }
+  }
+}

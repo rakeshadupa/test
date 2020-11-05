@@ -174,14 +174,14 @@
           "operationId" : "getUserByName",
           "produces" : [ "application/json", "application/xml" ],
           "parameters" : [ {
-            "name" : "username",
             "in" : "path",
-            "description" : "The name that needs to be fetched. Use user1 for testing. ",
-            "required" : true,
-            "type" : "string",
             "parameterSchema" : {
               "type" : "string"
-            }
+            },
+            "name" : "username",
+            "description" : "The name that needs to be fetched. Use user1 for testing. ",
+            "type" : "string",
+            "required" : true
           } ],
           "responses" : {
             "200" : {
@@ -258,14 +258,14 @@
           "consumes" : [ "application/json" ],
           "produces" : [ "application/json", "application/xml" ],
           "parameters" : [ {
-            "name" : "username",
             "in" : "path",
-            "description" : "name that need to be updated",
-            "required" : true,
-            "type" : "string",
             "parameterSchema" : {
               "type" : "string"
-            }
+            },
+            "name" : "username",
+            "description" : "name that need to be updated",
+            "type" : "string",
+            "required" : true
           } ],
           "responses" : {
             "400" : {
@@ -321,14 +321,14 @@
           "operationId" : "deleteUser",
           "produces" : [ "application/json", "application/xml" ],
           "parameters" : [ {
-            "name" : "username",
             "in" : "path",
-            "description" : "The name that needs to be deleted",
-            "required" : true,
-            "type" : "string",
             "parameterSchema" : {
               "type" : "string"
-            }
+            },
+            "name" : "username",
+            "description" : "The name that needs to be deleted",
+            "type" : "string",
+            "required" : true
           } ],
           "responses" : {
             "400" : {
@@ -382,22 +382,22 @@
           "operationId" : "findPetsByStatus",
           "produces" : [ "application/json", "application/xml" ],
           "parameters" : [ {
-            "name" : "status",
             "in" : "query",
-            "description" : "Status values that need to be considered for filter",
-            "required" : true,
-            "type" : "array",
-            "collectionFormat" : "multi",
-            "items" : {
-              "type" : "string"
-            },
             "parameterSchema" : {
               "type" : "array",
               "items" : {
                 "type" : "string",
                 "enum" : [ "available", "pending", "sold" ]
               }
-            }
+            },
+            "name" : "status",
+            "description" : "Status values that need to be considered for filter",
+            "type" : "array",
+            "collectionFormat" : "multi",
+            "items" : {
+              "type" : "string"
+            },
+            "required" : true
           } ],
           "responses" : {
             "200" : {
@@ -516,16 +516,16 @@
           "consumes" : [ "multipart/form-data" ],
           "produces" : [ "application/json" ],
           "parameters" : [ {
-            "name" : "petId",
             "in" : "path",
-            "description" : "ID of pet to update",
-            "required" : true,
-            "type" : "integer",
-            "format" : "int64",
             "parameterSchema" : {
-              "type" : "integer",
-              "format" : "int64"
-            }
+              "format" : "int64",
+              "type" : "integer"
+            },
+            "name" : "petId",
+            "format" : "int64",
+            "description" : "ID of pet to update",
+            "type" : "integer",
+            "required" : true
           } ],
           "responses" : {
             "200" : {
@@ -629,23 +629,23 @@
           "operationId" : "loginUser",
           "produces" : [ "application/json", "application/xml" ],
           "parameters" : [ {
+            "in" : "query",
+            "parameterSchema" : {
+              "type" : "string"
+            },
             "name" : "username",
-            "in" : "query",
             "description" : "The user name for login",
-            "required" : true,
             "type" : "string",
-            "parameterSchema" : {
-              "type" : "string"
-            }
+            "required" : true
           }, {
-            "name" : "password",
             "in" : "query",
-            "description" : "The password for login in clear text",
-            "required" : true,
-            "type" : "string",
             "parameterSchema" : {
               "type" : "string"
-            }
+            },
+            "name" : "password",
+            "description" : "The password for login in clear text",
+            "type" : "string",
+            "required" : true
           } ],
           "responses" : {
             "200" : {
@@ -805,21 +805,21 @@
           "operationId" : "findPetsByTags",
           "produces" : [ "application/json", "application/xml" ],
           "parameters" : [ {
-            "name" : "tags",
             "in" : "query",
-            "description" : "Tags to filter by",
-            "required" : true,
-            "type" : "array",
-            "collectionFormat" : "multi",
-            "items" : {
-              "type" : "string"
-            },
             "parameterSchema" : {
               "type" : "array",
               "items" : {
                 "type" : "string"
               }
-            }
+            },
+            "name" : "tags",
+            "description" : "Tags to filter by",
+            "type" : "array",
+            "collectionFormat" : "multi",
+            "items" : {
+              "type" : "string"
+            },
+            "required" : true
           } ],
           "responses" : {
             "200" : {
@@ -1001,16 +1001,16 @@
           "operationId" : "getPetById",
           "produces" : [ "application/json", "application/xml" ],
           "parameters" : [ {
-            "name" : "petId",
             "in" : "path",
-            "description" : "ID of pet to return",
-            "required" : true,
-            "type" : "integer",
-            "format" : "int64",
             "parameterSchema" : {
-              "type" : "integer",
-              "format" : "int64"
-            }
+              "format" : "int64",
+              "type" : "integer"
+            },
+            "name" : "petId",
+            "format" : "int64",
+            "description" : "ID of pet to return",
+            "type" : "integer",
+            "required" : true
           } ],
           "responses" : {
             "200" : {
@@ -1090,16 +1090,16 @@
           "consumes" : [ "application/x-www-form-urlencoded" ],
           "produces" : [ "application/json", "application/xml" ],
           "parameters" : [ {
-            "name" : "petId",
             "in" : "path",
-            "description" : "ID of pet that needs to be updated",
-            "required" : true,
-            "type" : "integer",
-            "format" : "int64",
             "parameterSchema" : {
-              "type" : "integer",
-              "format" : "int64"
-            }
+              "format" : "int64",
+              "type" : "integer"
+            },
+            "name" : "petId",
+            "format" : "int64",
+            "description" : "ID of pet that needs to be updated",
+            "type" : "integer",
+            "required" : true
           } ],
           "responses" : {
             "405" : {
@@ -1145,24 +1145,24 @@
           "operationId" : "deletePet",
           "produces" : [ "application/json", "application/xml" ],
           "parameters" : [ {
-            "name" : "api_key",
             "in" : "header",
-            "required" : false,
-            "type" : "string",
             "parameterSchema" : {
               "type" : "string"
-            }
+            },
+            "name" : "api_key",
+            "type" : "string",
+            "required" : false
           }, {
-            "name" : "petId",
             "in" : "path",
-            "description" : "Pet id to delete",
-            "required" : true,
-            "type" : "integer",
-            "format" : "int64",
             "parameterSchema" : {
-              "type" : "integer",
-              "format" : "int64"
-            }
+              "format" : "int64",
+              "type" : "integer"
+            },
+            "name" : "petId",
+            "format" : "int64",
+            "description" : "Pet id to delete",
+            "type" : "integer",
+            "required" : true
           } ],
           "responses" : {
             "400" : {
@@ -1219,16 +1219,16 @@
           "operationId" : "getOrderById",
           "produces" : [ "application/json", "application/xml" ],
           "parameters" : [ {
-            "name" : "orderId",
             "in" : "path",
-            "description" : "ID of pet that needs to be fetched",
-            "required" : true,
-            "type" : "integer",
-            "format" : "int64",
             "parameterSchema" : {
-              "type" : "integer",
-              "format" : "int64"
-            }
+              "format" : "int64",
+              "type" : "integer"
+            },
+            "name" : "orderId",
+            "format" : "int64",
+            "description" : "ID of pet that needs to be fetched",
+            "type" : "integer",
+            "required" : true
           } ],
           "responses" : {
             "200" : {
@@ -1304,16 +1304,16 @@
           "operationId" : "deleteOrder",
           "produces" : [ "application/json", "application/xml" ],
           "parameters" : [ {
-            "name" : "orderId",
             "in" : "path",
-            "description" : "ID of the order that needs to be deleted",
-            "required" : true,
-            "type" : "integer",
-            "format" : "int64",
             "parameterSchema" : {
-              "type" : "integer",
-              "format" : "int64"
-            }
+              "format" : "int64",
+              "type" : "integer"
+            },
+            "name" : "orderId",
+            "format" : "int64",
+            "description" : "ID of the order that needs to be deleted",
+            "type" : "integer",
+            "required" : true
           } ],
           "responses" : {
             "400" : {

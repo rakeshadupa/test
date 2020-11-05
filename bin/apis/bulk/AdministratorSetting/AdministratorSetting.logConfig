@@ -9,12 +9,12 @@
     "userName" : "",
     "protocol" : "HTTP",
     "password" : "********************************",
-    "kibanaLogger" : "",
-    "enableSecurityLogger" : "",
-    "sagOsgiLogger" : "info",
+    "kibanaLogger" : "verbose",
+    "enableSecurityLogger" : "false",
+    "sagOsgiLogger" : "debug",
     "port" : "",
-    "enableSessionLogger" : "",
-    "apigatewayLogger" : "",
-    "elasticSearchLogger" : "info"
+    "enableSessionLogger" : "false",
+    "apigatewayLogger" : "debug",
+    "elasticSearchLogger" : "debug"
   }
 }
