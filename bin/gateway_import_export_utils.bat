@@ -49,7 +49,7 @@ IF EXIST %CURRENT_DIR%/apis/%PROJECT_NAME%/ (
  del "%CURRENT_DIR%/%PROJECT_NAME%.zip"
  goto :EOF
 ) ELSE (
-  echo "API with name %PROJECT_NAME% does not exists"
+  echo "API with name %PROJECT_NAME% does not exists import---"
   goto :EOF
 )
 
