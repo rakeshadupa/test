@@ -4,14 +4,13 @@
     "value" : "Straight Through Routing",
     "locale" : "en"
   } ],
-  "descriptions" : [ {
-    "value" : "",
-    "locale" : "English"
-  } ],
   "templateKey" : "straightThroughRouting",
   "parameters" : [ {
     "templateKey" : "endpointUri",
     "values" : [ "http://DESKTOP-LS0I62P:5555/rad/Deployment.rad:log/${sys:resource_path}" ]
+  }, {
+    "templateKey" : "method",
+    "values" : [ "CUSTOM" ]
   } ],
   "active" : false
 }

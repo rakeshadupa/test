@@ -4,9 +4,8 @@
       "version" : "1.0",
       "title" : "log"
     },
-    "host" : "DESKTOP-LS0I62P:5555",
-    "basePath" : "/rad/Deployment.rad:log",
-    "schemes" : [ "http" ],
+    "serviceRegistryDisplayName" : "log_1.0",
+    "schemes" : [ ],
     "consumes" : [ "application/json" ],
     "produces" : [ "application/json" ],
     "security" : [ ],
@@ -15,7 +14,6 @@
         "get" : {
           "description" : "",
           "operationId" : "doLog_GET_1",
-          "parameters" : [ ],
           "responses" : {
             "200" : {
               "description" : "OK",
@@ -23,61 +21,69 @@
                 "application/json" : {
                   "schema" : {
                     "$ref" : "#/components/schemas/doLog_GET_response"
-                  }
+                  },
+                  "examples" : { }
                 }
-              }
+              },
+              "links" : { },
+              "schema" : { },
+              "examples" : { },
+              "headers" : { }
             },
             "401" : {
-              "description" : "Access Denied"
+              "description" : "Access Denied",
+              "content" : { },
+              "links" : { },
+              "schema" : { },
+              "examples" : { },
+              "headers" : { }
             }
           },
+          "mockedResponses" : { },
+          "mockedConditionsBasedCustomResponsesList" : [ ],
           "enabled" : true,
+          "scopes" : [ ],
           "requestBody" : {
             "content" : {
               "application/x-www-form-urlencoded" : {
                 "schema" : {
-                  "type" : "object",
-                  "properties" : {
-                    "firstName" : {
-                      "type" : "string",
-                      "description" : "",
-                      "readOnly" : false
-                    },
-                    "lastName" : {
-                      "type" : "string",
-                      "description" : "",
-                      "readOnly" : false
-                    }
-                  }
-                }
+                  "type" : "gateway",
+                  "schema" : "{\"type\":\"object\",\"properties\":{\"firstName\":{\"type\":\"string\",\"description\":\"\",\"readOnly\":false},\"lastName\":{\"type\":\"string\",\"description\":\"\",\"readOnly\":false}}}"
+                },
+                "examples" : { }
               }
             },
-            "required" : true
+            "name" : "doLog_GET_1"
           }
         },
-        "parameters" : [ ],
+        "scopes" : [ ],
+        "displayName" : "/doLog",
         "enabled" : true
       }
     },
     "securityDefinitions" : { },
     "definitions" : { },
+    "parameters" : { },
     "baseUriParameters" : [ ],
     "externalDocs" : [ ],
     "servers" : [ {
-      "url" : "http://DESKTOP-LS0I62P:5555/rad/Deployment.rad:log"
+      "url" : "http://DESKTOP-LS0I62P:5555/rad/Deployment.rad:log",
+      "variables" : { }
     } ],
     "components" : {
       "schemas" : {
         "doLog_GET_response" : {
-          "required" : [ "fullName" ],
-          "type" : "object",
-          "properties" : {
-            "fullName" : {
-              "type" : "string"
-            }
-          }
+          "type" : "gateway",
+          "schema" : "{\"required\":[\"fullName\"],\"type\":\"object\",\"properties\":{\"fullName\":{\"type\":\"string\"}}}"
         }
-      }
+      },
+      "responses" : { },
+      "parameters" : { },
+      "examples" : { },
+      "requestBodies" : { },
+      "headers" : { },
+      "links" : { },
+      "callbacks" : { }
     },
     "type" : "rest"
   },
@@ -100,6 +106,7 @@
   "scopes" : [ ],
   "publishedPortals" : [ ],
   "creationDate" : "2020-11-05 04:34:54 GMT",
+  "lastModified" : "2020-11-05 05:01:24 GMT",
   "systemVersion" : 1,
   "id" : "0cc5cbd3-cbe8-4f93-9daa-8ba9f7c742bd"
 }

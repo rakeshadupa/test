@@ -1,0 +1,21 @@
+{
+  "applicationID" : "baf8a624-e2dd-429e-aec4-4430cd4390ff",
+  "name" : "log app",
+  "owner" : "Administrator",
+  "identifiers" : [ ],
+  "contactEmails" : [ ],
+  "accessTokens" : {
+    "apiAccessKey" : {
+      "apiAccessKey" : "baea6e82f2d3fbfe8b5f57ba877a8111da8c287eac4c16b67577c98c1b0836f3"
+    }
+  },
+  "creationDate" : "2020-11-05 05:02:05 GMT",
+  "lastUpdated" : 1604552526016,
+  "siteURLs" : [ ],
+  "jsOrigins" : [ ],
+  "version" : "1.0",
+  "properties" : { },
+  "isSuspended" : false,
+  "authStrategyIds" : [ ],
+  "subscription" : false
+}

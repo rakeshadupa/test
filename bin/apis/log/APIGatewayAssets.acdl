@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <asset_composite name="APIGatewayAssets" displayName="Assets for API Gateway" runtimeVersion="10.5" targetNamespace="http://namespaces.softwareag.com/webMethods/APIGateway" xmlns="http://namespaces.softwareag.com/acdl/1.0" xmlns:EDA="http://namespaces.softwareag.com/webMethods/EDA" xmlns:MWS="http://namespaces.softwareag.com/webMethods/MWS" xmlns:IS="http://namespaces.softwareag.com/webMethods/IS" xmlns:APIPORTAL="http://namespaces.softwareag.com/webMethods/APIPORTAL" xmlns:AgileApps="http://namespaces.softwareag.com/webMethods/AgileApps" xmlns:BROKER="http://namespaces.softwareag.com/webMethods/BROKER" xmlns:implDetails="http://namespaces.softwareag.com/acdl/implDetails" xmlns:UniversalMessaging="http://namespaces.softwareag.com/webMethods/UniversalMessaging" xmlns:TN="http://namespaces.softwareag.com/webMethods/TN" xmlns:RULES="http://namespaces.softwareag.com/webMethods/RULES" xmlns:BPM="http://namespaces.softwareag.com/webMethods/BPM" xmlns:Optimize="http://namespaces.softwareag.com/webMethods/Optimize">
-    <buildInfo name="BuildTimestamp" value="2020-11-05T10:08:08"/>
-    <asset name="Alias.PingFederate" displayName="PingFederate" isDeployable="true">
-        <implementation.generic type="Alias"/>
+    <buildInfo name="BuildTimestamp" value="2020-11-05T10:32:24"/>
+    <asset name="PolicyAction.badb55e8-2c9e-4844-bcc2-34f4834ca935" displayName="Policy Action [Straight Through Routing] -&gt; Policy For API Swagger Petstore[1.0.5]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+        <dependsOn>APIGateway:Alias.a593c88b-4e0a-4e4e-85ec-7e19d90ca332</dependsOn>
     </asset>
-    <asset name="AdministratorSetting.whiteListingIPs" displayName="whiteListingIPs" isDeployable="true">
+    <asset name="Alias.a593c88b-4e0a-4e4e-85ec-7e19d90ca332" displayName="PetStore_Routing_Alias" isDeployable="true">
+        <implementation.generic type="Alias"/>
+        <property name="value for Simple alias PetStore_Routing_Alias" many="false" isSecure="false" displayName="value for Simple alias PetStore_Routing_Alias">
+            <value>https://petstore.swagger.io/v2/${sys:resource_path}</value>
+        </property>
+    </asset>
+    <asset name="AccessProfile.API-Gateway-Providers" displayName="API-Gateway-Providers" isDeployable="true">
+        <implementation.generic type="AccessProfile"/>
+        <dependsOn>APIGateway:Group.API-Gateway-Providers</dependsOn>
+    </asset>
+    <asset name="Group.API-Gateway-Providers" displayName="API-Gateway-Providers" isDeployable="true">
+        <implementation.generic type="Group"/>
+    </asset>
+    <asset name="PolicyAction.GlobalLogInvocationPolicyAction" displayName="Policy Action [Log Invocation] -&gt; Transaction logging" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="AdministratorSetting.logConfig" displayName="logConfig" isDeployable="true">
         <implementation.generic type="AdministratorSetting"/>
+    </asset>
+    <asset name="User.Administrator" displayName="Administrator" isDeployable="true">
+        <implementation.generic type="User"/>
     </asset>
     <asset name="AccessControlList.c1a3ef75-e5b8-4ef5-b8b4-2f57cf89310d" displayName="AccessControlList for asset : Swagger Petstore" isDeployable="true">
         <implementation.generic type="AccessControlList"/>
@@ -19,10 +39,6 @@
     </asset>
     <asset name="Group.Administrators" displayName="Administrators" isDeployable="true">
         <implementation.generic type="Group"/>
-        <dependsOn>APIGateway:User.Administrator</dependsOn>
-    </asset>
-    <asset name="User.Administrator" displayName="Administrator" isDeployable="true">
-        <implementation.generic type="User"/>
     </asset>
     <asset name="Group.API-Gateway-Administrators" displayName="API-Gateway-Administrators" isDeployable="true">
         <implementation.generic type="Group"/>
@@ -34,55 +50,66 @@
     <asset name="Group.Everybody" displayName="Everybody" isDeployable="true">
         <implementation.generic type="Group"/>
     </asset>
-    <asset name="Alias.EurekaDefault" displayName="EurekaDefault" isDeployable="true">
-        <implementation.generic type="Alias"/>
-        <dependsOn>APIGateway:PassmanData.SVC_REGISTRY_BASIC_AUTH_SECRETEurekaDefault</dependsOn>
+    <asset name="AdministratorSetting.HTTPListener@5555" displayName="HTTPListener@5555" isDeployable="true">
+        <implementation.generic type="AdministratorSetting"/>
     </asset>
-    <asset name="PassmanData.SVC_REGISTRY_BASIC_AUTH_SECRETEurekaDefault" displayName="SVC_REGISTRY_BASIC_AUTH_SECRETEurekaDefault" isDeployable="true">
-        <implementation.generic type="PassmanData"/>
+    <asset name="Alias.local" displayName="local" isDeployable="true">
+        <implementation.generic type="Alias"/>
+    </asset>
+    <asset name="AccessControlList.ccb2bf33-05d7-47d1-a61d-aaf26f71787e" displayName="AccessControlList for asset : log app" isDeployable="true">
+        <implementation.generic type="AccessControlList"/>
+        <dependsOn>APIGateway:AccessProfile.Administrators</dependsOn>
+        <dependsOn>APIGateway:AccessProfile.Default</dependsOn>
+    </asset>
+    <asset name="PolicyAction.3265b02e-bc06-450e-97c3-de9a0d4ce075" displayName="Policy Action [Straight Through Routing] -&gt; Policy For API log[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="ProxyBypass.proxyBypass" displayName="proxyBypass" isDeployable="true">
+        <implementation.generic type="ProxyBypass"/>
+    </asset>
+    <asset name="AdministratorSetting.whiteListingIPs" displayName="whiteListingIPs" isDeployable="true">
+        <implementation.generic type="AdministratorSetting"/>
+    </asset>
+    <asset name="AccessControlList.cc9ef726-7615-49ff-8fcb-25a9479eac90" displayName="AccessControlList for asset : Swagger Petstore" isDeployable="true">
+        <implementation.generic type="AccessControlList"/>
+        <dependsOn>APIGateway:AccessProfile.Administrators</dependsOn>
+        <dependsOn>APIGateway:AccessProfile.Default</dependsOn>
+    </asset>
+    <asset name="UrlAlias.health" displayName="health" isDeployable="true">
+        <implementation.generic type="UrlAlias"/>
+    </asset>
+    <asset name="PolicyAction.f99da7fd-d6ca-47fe-8f6b-706e3bac0b2a" displayName="Policy Action [Enable HTTP / HTTPS] -&gt; Policy For API Swagger Petstore[1.0.5]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="PolicyAction.ed6b0411-c29e-4d82-9fe7-dd8107ea6902" displayName="Policy Action [Enable HTTP / HTTPS] -&gt; Policy For API log[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
+    </asset>
+    <asset name="PolicyAction.2c0c5dd2-2204-40c4-ad1a-dad5520ebdeb" displayName="Policy Action [Identify &amp; Authorize Application] -&gt; Policy For API log[1.0]" isDeployable="true">
+        <implementation.generic type="PolicyAction"/>
     </asset>
     <asset name="Policy.2f5fab78-85e0-4957-9734-3e514fbb9fc0" displayName="Policy For API Swagger Petstore[1.0.5]" isDeployable="true">
         <implementation.generic type="Policy"/>
         <dependsOn>APIGateway:PolicyAction.badb55e8-2c9e-4844-bcc2-34f4834ca935</dependsOn>
         <dependsOn>APIGateway:PolicyAction.f99da7fd-d6ca-47fe-8f6b-706e3bac0b2a</dependsOn>
     </asset>
-    <asset name="PolicyAction.badb55e8-2c9e-4844-bcc2-34f4834ca935" displayName="Policy Action [Straight Through Routing] -&gt; Policy For API Swagger Petstore[1.0.5]" isDeployable="true">
-        <implementation.generic type="PolicyAction"/>
-        <dependsOn>APIGateway:Alias.a593c88b-4e0a-4e4e-85ec-7e19d90ca332</dependsOn>
-    </asset>
-    <asset name="Alias.a593c88b-4e0a-4e4e-85ec-7e19d90ca332" displayName="PetStore_Routing_Alias" isDeployable="true">
+    <asset name="Alias.OKTA" displayName="OKTA" isDeployable="true">
         <implementation.generic type="Alias"/>
-        <property name="value for Simple alias PetStore_Routing_Alias" many="false" isSecure="false" displayName="value for Simple alias PetStore_Routing_Alias">
-            <value>https://petstore.swagger.io/v2/${sys:resource_path}</value>
-        </property>
-    </asset>
-    <asset name="PolicyAction.f99da7fd-d6ca-47fe-8f6b-706e3bac0b2a" displayName="Policy Action [Enable HTTP / HTTPS] -&gt; Policy For API Swagger Petstore[1.0.5]" isDeployable="true">
-        <implementation.generic type="PolicyAction"/>
     </asset>
     <asset name="Policy.GlobalLogInvocationPolicy" displayName="Transaction logging[Global Policy]" isDeployable="true">
         <implementation.generic type="Policy"/>
         <dependsOn>APIGateway:PolicyAction.GlobalLogInvocationPolicyAction</dependsOn>
     </asset>
-    <asset name="PolicyAction.GlobalLogInvocationPolicyAction" displayName="Policy Action [Log Invocation] -&gt; Transaction logging" isDeployable="true">
-        <implementation.generic type="PolicyAction"/>
+    <asset name="AdministratorSetting.cache" displayName="cache" isDeployable="true">
+        <implementation.generic type="AdministratorSetting"/>
     </asset>
-    <asset name="PolicyAction.ed6b0411-c29e-4d82-9fe7-dd8107ea6902" displayName="Policy Action [Enable HTTP / HTTPS] -&gt; Policy For API log[1.0]" isDeployable="true">
-        <implementation.generic type="PolicyAction"/>
+    <asset name="AdministratorSetting.HTTPGlobalIPAccessMode" displayName="HTTPGlobalIPAccessMode" isDeployable="true">
+        <implementation.generic type="AdministratorSetting"/>
     </asset>
-    <asset name="UrlAlias.metrics" displayName="metrics" isDeployable="true">
-        <implementation.generic type="UrlAlias"/>
+    <asset name="API.4ea2dcf0-66c5-469b-b822-fe4707c6f899" displayName="Swagger Petstore[1.0.5]" isDeployable="true">
+        <implementation.generic type="API"/>
+        <dependsOn>APIGateway:Policy.2f5fab78-85e0-4957-9734-3e514fbb9fc0</dependsOn>
     </asset>
-    <asset name="AccessProfile.API-Gateway-Providers" displayName="API-Gateway-Providers" isDeployable="true">
-        <implementation.generic type="AccessProfile"/>
-        <dependsOn>APIGateway:Group.API-Gateway-Providers</dependsOn>
-    </asset>
-    <asset name="Group.API-Gateway-Providers" displayName="API-Gateway-Providers" isDeployable="true">
-        <implementation.generic type="Group"/>
-    </asset>
-    <asset name="PolicyAction.3265b02e-bc06-450e-97c3-de9a0d4ce075" displayName="Policy Action [Straight Through Routing] -&gt; Policy For API log[1.0]" isDeployable="true">
-        <implementation.generic type="PolicyAction"/>
-    </asset>
-    <asset name="Alias.OKTA" displayName="OKTA" isDeployable="true">
+    <asset name="Alias.PingFederate" displayName="PingFederate" isDeployable="true">
         <implementation.generic type="Alias"/>
     </asset>
     <asset name="Keystore.DEFAULT_IS_KEYSTORE" displayName="DEFAULT_IS_KEYSTORE" isDeployable="true">
@@ -96,7 +123,53 @@
     <asset name="PassmanData.wm.security.keystore.DEFAULT_IS_KEYSTORE.ssos" displayName="wm.security.keystore.DEFAULT_IS_KEYSTORE.ssos" isDeployable="true">
         <implementation.generic type="PassmanData"/>
     </asset>
-    <asset name="AccessControlList.cc9ef726-7615-49ff-8fcb-25a9479eac90" displayName="AccessControlList for asset : Swagger Petstore" isDeployable="true">
+    <asset name="Truststore.DEFAULT_IS_TRUSTSTORE" displayName="DEFAULT_IS_TRUSTSTORE" isDeployable="true">
+        <implementation.generic type="Truststore"/>
+        <dependsOn>APIGateway:PassmanData.wm.security.keystore.DEFAULT_IS_TRUSTSTORE</dependsOn>
+    </asset>
+    <asset name="PassmanData.wm.security.keystore.DEFAULT_IS_TRUSTSTORE" displayName="wm.security.keystore.DEFAULT_IS_TRUSTSTORE" isDeployable="true">
+        <implementation.generic type="PassmanData"/>
+    </asset>
+    <asset name="Policy.1a796700-1346-4c12-b04b-1098ac8604dd" displayName="Policy For API log[1.0]" isDeployable="true">
+        <implementation.generic type="Policy"/>
+        <dependsOn>APIGateway:PolicyAction.2c0c5dd2-2204-40c4-ad1a-dad5520ebdeb</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.3265b02e-bc06-450e-97c3-de9a0d4ce075</dependsOn>
+        <dependsOn>APIGateway:PolicyAction.ed6b0411-c29e-4d82-9fe7-dd8107ea6902</dependsOn>
+    </asset>
+    <asset name="Alias.EurekaDefault" displayName="EurekaDefault" isDeployable="true">
+        <implementation.generic type="Alias"/>
+        <dependsOn>APIGateway:PassmanData.SVC_REGISTRY_BASIC_AUTH_SECRETEurekaDefault</dependsOn>
+    </asset>
+    <asset name="PassmanData.SVC_REGISTRY_BASIC_AUTH_SECRETEurekaDefault" displayName="SVC_REGISTRY_BASIC_AUTH_SECRETEurekaDefault" isDeployable="true">
+        <implementation.generic type="PassmanData"/>
+    </asset>
+    <asset name="AdministratorSetting.HTTPListener@9999" displayName="HTTPListener@9999" isDeployable="true">
+        <implementation.generic type="AdministratorSetting"/>
+    </asset>
+    <asset name="AdministratorSetting.mobileApp" displayName="mobileApp" isDeployable="true">
+        <implementation.generic type="AdministratorSetting"/>
+    </asset>
+    <asset name="API.0cc5cbd3-cbe8-4f93-9daa-8ba9f7c742bd" displayName="log[1.0]" isDeployable="true">
+        <implementation.generic type="API"/>
+        <dependsOn>APIGateway:Application.baf8a624-e2dd-429e-aec4-4430cd4390ff</dependsOn>
+        <dependsOn>APIGateway:Policy.1a796700-1346-4c12-b04b-1098ac8604dd</dependsOn>
+    </asset>
+    <asset name="Application.baf8a624-e2dd-429e-aec4-4430cd4390ff" displayName="log app" isDeployable="true">
+        <implementation.generic type="Application"/>
+        <dependsOn>APIGateway:API.0cc5cbd3-cbe8-4f93-9daa-8ba9f7c742bd</dependsOn>
+        <dependsOn>APIGateway:PassmanData.API_ACCESS_KEYbaf8a624-e2dd-429e-aec4-4430cd4390ff</dependsOn>
+        <dependsOn>APIGateway:RegisteredApplication.baf8a624-e2dd-429e-aec4-4430cd4390ff</dependsOn>
+    </asset>
+    <asset name="PassmanData.API_ACCESS_KEYbaf8a624-e2dd-429e-aec4-4430cd4390ff" displayName="API_ACCESS_KEYbaf8a624-e2dd-429e-aec4-4430cd4390ff" isDeployable="true">
+        <implementation.generic type="PassmanData"/>
+    </asset>
+    <asset name="RegisteredApplication.baf8a624-e2dd-429e-aec4-4430cd4390ff" displayName="RegisteredApplication [ log app ]" isDeployable="true">
+        <implementation.generic type="RegisteredApplication"/>
+    </asset>
+    <asset name="UrlAlias.metrics" displayName="metrics" isDeployable="true">
+        <implementation.generic type="UrlAlias"/>
+    </asset>
+    <asset name="AccessControlList.c232e664-7c62-42f7-a1b1-6de6ebaa9f9a" displayName="AccessControlList for asset : log" isDeployable="true">
         <implementation.generic type="AccessControlList"/>
         <dependsOn>APIGateway:AccessProfile.Administrators</dependsOn>
         <dependsOn>APIGateway:AccessProfile.Default</dependsOn>
@@ -107,57 +180,5 @@
     </asset>
     <asset name="PassmanData.SVC_REGISTRY_BASIC_AUTH_SECRETServiceConsulDefault" displayName="SVC_REGISTRY_BASIC_AUTH_SECRETServiceConsulDefault" isDeployable="true">
         <implementation.generic type="PassmanData"/>
-    </asset>
-    <asset name="AdministratorSetting.HTTPListener@5555" displayName="HTTPListener@5555" isDeployable="true">
-        <implementation.generic type="AdministratorSetting"/>
-    </asset>
-    <asset name="Policy.1a796700-1346-4c12-b04b-1098ac8604dd" displayName="Policy For API log[1.0]" isDeployable="true">
-        <implementation.generic type="Policy"/>
-        <dependsOn>APIGateway:PolicyAction.3265b02e-bc06-450e-97c3-de9a0d4ce075</dependsOn>
-        <dependsOn>APIGateway:PolicyAction.ed6b0411-c29e-4d82-9fe7-dd8107ea6902</dependsOn>
-    </asset>
-    <asset name="API.4ea2dcf0-66c5-469b-b822-fe4707c6f899" displayName="Swagger Petstore[1.0.5]" isDeployable="true">
-        <implementation.generic type="API"/>
-        <dependsOn>APIGateway:Policy.2f5fab78-85e0-4957-9734-3e514fbb9fc0</dependsOn>
-    </asset>
-    <asset name="AdministratorSetting.HTTPGlobalIPAccessMode" displayName="HTTPGlobalIPAccessMode" isDeployable="true">
-        <implementation.generic type="AdministratorSetting"/>
-    </asset>
-    <asset name="Truststore.DEFAULT_IS_TRUSTSTORE" displayName="DEFAULT_IS_TRUSTSTORE" isDeployable="true">
-        <implementation.generic type="Truststore"/>
-        <dependsOn>APIGateway:PassmanData.wm.security.keystore.DEFAULT_IS_TRUSTSTORE</dependsOn>
-    </asset>
-    <asset name="PassmanData.wm.security.keystore.DEFAULT_IS_TRUSTSTORE" displayName="wm.security.keystore.DEFAULT_IS_TRUSTSTORE" isDeployable="true">
-        <implementation.generic type="PassmanData"/>
-    </asset>
-    <asset name="AccessControlList.c232e664-7c62-42f7-a1b1-6de6ebaa9f9a" displayName="AccessControlList for asset : log" isDeployable="true">
-        <implementation.generic type="AccessControlList"/>
-        <dependsOn>APIGateway:AccessProfile.Administrators</dependsOn>
-        <dependsOn>APIGateway:AccessProfile.Default</dependsOn>
-    </asset>
-    <asset name="AdministratorSetting.HTTPListener@9999" displayName="HTTPListener@9999" isDeployable="true">
-        <implementation.generic type="AdministratorSetting"/>
-    </asset>
-    <asset name="ProxyBypass.proxyBypass" displayName="proxyBypass" isDeployable="true">
-        <implementation.generic type="ProxyBypass"/>
-    </asset>
-    <asset name="UrlAlias.health" displayName="health" isDeployable="true">
-        <implementation.generic type="UrlAlias"/>
-    </asset>
-    <asset name="API.0cc5cbd3-cbe8-4f93-9daa-8ba9f7c742bd" displayName="log[1.0]" isDeployable="true">
-        <implementation.generic type="API"/>
-        <dependsOn>APIGateway:Policy.1a796700-1346-4c12-b04b-1098ac8604dd</dependsOn>
-    </asset>
-    <asset name="AdministratorSetting.mobileApp" displayName="mobileApp" isDeployable="true">
-        <implementation.generic type="AdministratorSetting"/>
-    </asset>
-    <asset name="Alias.local" displayName="local" isDeployable="true">
-        <implementation.generic type="Alias"/>
-    </asset>
-    <asset name="AdministratorSetting.logConfig" displayName="logConfig" isDeployable="true">
-        <implementation.generic type="AdministratorSetting"/>
-    </asset>
-    <asset name="AdministratorSetting.cache" displayName="cache" isDeployable="true">
-        <implementation.generic type="AdministratorSetting"/>
     </asset>
 </asset_composite>
